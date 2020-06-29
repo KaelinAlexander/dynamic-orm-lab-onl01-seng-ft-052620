@@ -63,7 +63,7 @@ class InteractiveRecord
   def self.find_by(student_hash)
     sql = "SELECT * FROM #{self.table_name} WHERE ? = '?'"
     binding.pry
-    DB[:conn].execute(sql, attr.keys[0].to_s, self.attr)
+    DB[:conn].execute(sql, attr.keys[0].to_s, attr.values[0].to_s)
   end
 
 end
